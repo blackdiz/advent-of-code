@@ -23,9 +23,12 @@ with open('input.txt', 'r') as f:
         if check(levels):
             safeCount += 1
         else:
-
-
-
+            count = 0
+            while (count < len(levels)):
+                if check(levels[:count] + levels[count + 1:]):
+                    safeCount += 1
+                    break
+                count += 1
 
     print(safeCount)
 
